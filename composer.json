@@ -1,0 +1,12 @@
+{
+    "name": "singmyr/pdf",
+    "authors": [
+        {
+            "name": "Mattias Singmyr",
+            "email": "mattias@grebban.com"
+        }
+    ],
+    "require": {
+        "smalot/pdfparser": "^0.14.0"
+    }
+}
