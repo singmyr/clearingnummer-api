@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"regexp"
 	"time"
+
+	"./pdf"
 )
 
 const baseURL = "https://www.swedishbankers.se"
@@ -55,6 +57,11 @@ func main() {
 		if pdfReadErr != nil {
 			log.Fatal(pdfReadErr)
 		}
-		p(string(pdfBody))
+
+		document := pdf.Parse(pdfBody)
+		p(document.Version)
+
+		// Free memory.
+		document = nil
 	}
 }
